@@ -20,6 +20,9 @@ pipeline {
                 }
             }
         }
+        tools {
+            maven 'Maven-3.27'  // 名字必须和 Global Tool Configuration 中一致
+        }
         stage('Deploy') {
             steps {
                 script {
