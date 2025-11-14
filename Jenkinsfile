@@ -3,6 +3,9 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'openjdk:17-jre'
     }
+    tools {
+        maven 'Maven-3.27'  // 正确位置：pipeline 的直接子项
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -19,9 +22,6 @@ pipeline {
                     sh 'mvn clean package'
                 }
             }
-        }
-        tools {
-            maven 'Maven-3.27'  // 名字必须和 Global Tool Configuration 中一致
         }
         stage('Deploy') {
             steps {
