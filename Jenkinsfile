@@ -17,8 +17,17 @@ pipeline {
                 script {
                     echo 'Building...'
                     // 示例：mvn clean package
-                    sh 'hello_world.sh'
                    
+                }
+            }
+        }
+        stage('Run Script') {
+            steps {
+                script {
+                    echo 'Making script executable...'
+                    sh 'chmod +x hello_world.sh'
+                    echo 'Running script...'
+                    sh './hello_world.sh'
                 }
             }
         }
