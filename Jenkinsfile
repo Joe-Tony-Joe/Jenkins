@@ -4,7 +4,7 @@ pipeline {
         DOCKER_IMAGE = 'openjdk:17-jre'
     }
     tools {
-        maven 'Maven-3.27'  // 正确位置：pipeline 的直接子项
+        maven 'Maven-3.9.11'  // 正确位置：pipeline 的直接子项
     }
     stages {
         stage('Checkout') {
