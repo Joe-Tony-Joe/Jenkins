@@ -17,6 +17,7 @@ pipeline {
                 script {
                     echo 'Building...'
                     // 示例：mvn clean package
+                    sh 'hello_world.sh'
                    
                 }
             }
