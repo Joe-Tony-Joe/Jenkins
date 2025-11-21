@@ -77,6 +77,16 @@ echo "--- 系统负载 ---"
 uptime
 echo ""
 
+# 系统服务状态
+echo "--- 系统服务状态 ---"
+if command -v systemctl &> /dev/null; then
+    systemctl status --type=service --no-pager
+else
+    echo "systemctl工具不可用"
+fi
+
+echo "test ending ..."
+
 echo "================================"
 echo "硬件配置检测完成"
 echo "================================"
